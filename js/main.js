@@ -74,7 +74,7 @@
 	        .style("font-size", "18px")
 	        .style("font-weight", "bold")
 	        .style("font-family", "sans-serif")   
-	        .text("Comparativo de empregos diretamente vs indiretamente");
+	        .text("Comparativo entre o número de empregados do setor elétrico vs número de ");
 
 	        svg.append("text")
 	        .attr("x", (width / 2) - 30)             
@@ -83,7 +83,7 @@
 	        .style("font-size", "18px") 
 	        .style("font-weight", "bold")
 	        .style("font-family", "sans-serif") 
-	        .text(" ligados ao setor de energia elétrica no Brasil");
+	        .text("empregados diretamente ligados à produção de energia elétrica no Brasil");
 		});
 
 		function type(d) {

@@ -1,0 +1,16 @@
+Comparativo entre o número de empregados do setor energia elétrica e o número de empregados do setor diretamente ligados a função principal (produção de energia).
+
+Link para o acesso à visualização:
+	https://litodaldegan.github.io/
+
+Autores:
+	Alberto Passini
+	Eduardo Lelis
+	Ítalo Daldegan
+	Leonardo Apolinário
+
+Sobre a visualização:
+	Foi utilizado a ideia de gráfico de barras com dados para os dois sentidos do eixo X, sendo ambos os lados com valores positivos. A escolha deste tipo de visualização está no fato de que não achamos adequado a sobreposição de dados em gráfico de barras. Como foi visto em sala de aula, a sobreposição de dados dificulta muito a comparação dos valores. Desde modo, o dados totais de empregados do setor de energia elétrica estão representados do lado esquerdo do gráfico (a esquerda do eixo Y), enquanto que os dados de empregados diretamente ligados a produção de energia estão representados do lado direito. As cores (azul e laranja), foram escolhidas pelo motivo de serem complementares e não apresentarem nenhum problema de visualização para pessoa daltônicas. Os dados do gráfico estão ordenados de forma alfabética em relação ao nomes do estados brasileiros. 
+
+Próxima etapa:
+	Implementação de opções de ordenação para a visualização.
