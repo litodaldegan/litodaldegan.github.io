@@ -1,55 +1,55 @@
 estado	quantidade	ligacao
 Acre	-2741	indireto
-Amazonas	-15300	indireto
-Amapá	-2309	indireto
-Pará	-7831	indireto
-Rondônia	-10100	indireto
-Roraima	-4359	indireto
-Tocantins	-2125	indireto
-Alagoas	-2159	indireto
-Bahia	-26070	indireto
-Ceará	-7390	indireto
-Maranhão	-3456	indireto
-Paraíba	-1553	indireto
-Pernambuco	-33967	indireto
-Piauí	-4400	indireto
-Rio Grande do Norte	-1368	indireto
-Sergipe	-2137	indireto
-Distrito Federal	-12148	indireto
-Goiás	-6731	indireto
-Mato Grosso do Sul	-1041	indireto
-Mato Grosso	-7333	indireto
-Espírito Santo	-1642	indireto
-Minas Gerais	-39016	indireto
-Rio de Janeiro	-60377	indireto
-São Paulo	-75162	indireto
-Paraná	-39880	indireto
-Rio Grande do Sul	-18451	indireto
-Santa Catarina	-10527	indireto
 Acre	122	direto
-Amazonas	439	direto
-Amapá	133	direto
-Pará	550	direto
-Rondônia	313	direto
-Roraima	59	direto
-Tocantins	166	direto
+Alagoas	-2159	indireto
 Alagoas	254	direto
+Amapá	-2309	indireto
+Amapá	133	direto
+Amazonas	-15300	indireto
+Amazonas	439	direto
+Bahia	-26070	indireto
 Bahia	3701	direto
+Ceará	-7390	indireto
 Ceará	829	direto
-Maranhão	452	direto
-Paraíba	226	direto
-Pernambuco	3764	direto
-Piauí	738	direto
-Rio Grande do Norte	176	direto
-Sergipe	340	direto
+Distrito Federal	-12148	indireto
 Distrito Federal	227	direto
-Goiás	270	direto
-Mato Grosso do Sul	60	direto
-Mato Grosso	300	direto
+Espírito Santo	-1642	indireto
 Espírito Santo	180	direto
+Goiás	-6731	indireto
+Goiás	270	direto
+Maranhão	-3456	indireto
+Maranhão	452	direto
+Mato Grosso	-7333	indireto
+Mato Grosso	300	direto
+Mato Grosso do Sul	-1041	indireto
+Mato Grosso do Sul	60	direto
+Minas Gerais	-39016	indireto
 Minas Gerais	3249	direto
-Rio de Janeiro	1506	direto
-São Paulo	4600	direto
+Paraná	-39880	indireto
 Paraná	3791	direto
+Paraíba	-1553	indireto
+Paraíba	226	direto
+Pará	-7831	indireto
+Pará	550	direto
+Pernambuco	-33967	indireto
+Pernambuco	3764	direto
+Piauí	-4400	indireto
+Piauí	738	direto
+Rio de Janeiro	-60377	indireto
+Rio de Janeiro	1506	direto
+Rio Grande do Norte	-1368	indireto
+Rio Grande do Norte	176	direto
+Rio Grande do Sul	-18451	indireto
 Rio Grande do Sul	955	direto
+Rondônia	-10100	indireto
+Rondônia	313	direto
+Roraima	-4359	indireto
+Roraima	59	direto
+Santa Catarina	-10527	indireto
 Santa Catarina	409	direto
+Sergipe	-2137	indireto
+Sergipe	340	direto
+São Paulo	-75162	indireto
+São Paulo	4600	direto
+Tocantins	-2125	indireto
+Tocantins	166	direto
