@@ -66,7 +66,7 @@
 		
 		  svg.append("g")
 		    .attr("class","legend")
-		    .attr("transform","translate(850,0)")
+		    .attr("transform","translate(850,-25)")
 		    .style("font-size","14px")
 		    .call(d3.legend);
 
@@ -74,7 +74,7 @@
 		//titulo do gráfico
 		   svg.append("text")
 	        .attr("x", (width / 2) - 30)             
-	        .attr("y", 5 - (margin.top / 2))
+	        .attr("y", 0 - (margin.top / 2))
 	        .attr("text-anchor", "middle")  
 	        .style("font-size", "18px")
 	        .style("font-weight", "bold")
@@ -83,7 +83,7 @@
 
 	        svg.append("text")
 	        .attr("x", (width / 2) - 30)             
-	        .attr("y", 25 - (margin.top / 2))
+	        .attr("y", 20 - (margin.top / 2))
 	        .attr("text-anchor", "middle")  
 	        .style("font-size", "18px") 
 	        .style("font-weight", "bold")
@@ -93,6 +93,7 @@
 
 		function type(d) {
 		  d.quantidade = +d.quantidade;
+		  d.totalempregados = +d.totalempregados;
 		  return d;
 		}
 
@@ -112,14 +113,30 @@
 			svg
 				.selectAll(".bar")
 				.filter(function(d){
-					return d.ligacao == sort[0];
+					if (sort[0] == "direto" || sort[0] == "indireto")
+						return d.ligacao == sort[0];
+
+					if (sort[0] == "tempregados")
+						return d.totalempregados;
+
+					return d.estado;
 				})
 				.sort(function(a, b) {
-					if (sort[1] == "asc")
-						return d3.ascending(Math.abs(a.quantidade),Math.abs(b.quantidade));
-					else
-						return d3.descending(Math.abs(a.quantidade),Math.abs(b.quantidade));
+					if (sort[0] == "direto" || sort[0] == "indireto") {
+						if (sort[1] == "asc")
+							return d3.ascending(Math.abs(a.quantidade),Math.abs(b.quantidade));
+						else
+							return d3.descending(Math.abs(a.quantidade),Math.abs(b.quantidade));
+					}
 
+					if (sort[0] == "tempregados") {
+						if (sort[1] == "asc")
+							return d3.ascending(a.totalempregados,b.totalempregados);
+						else
+							return d3.descending(a.totalempregados,b.totalempregados);
+					}
+
+					return d3.ascending(a.estado, b.estado);
 				})
 				.each(function(d) {
 					estados.push(d.estado);
