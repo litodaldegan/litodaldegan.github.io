@@ -1,55 +1,55 @@
-estado	quantidade	ligacao
-Acre	-2741	indireto
-Acre	122	direto
-Alagoas	-2159	indireto
-Alagoas	254	direto
-Amapá	-2309	indireto
-Amapá	133	direto
-Amazonas	-15300	indireto
-Amazonas	439	direto
-Bahia	-26070	indireto
-Bahia	3701	direto
-Ceará	-7390	indireto
-Ceará	829	direto
-Distrito Federal	-12148	indireto
-Distrito Federal	227	direto
-Espírito Santo	-1642	indireto
-Espírito Santo	180	direto
-Goiás	-6731	indireto
-Goiás	270	direto
-Maranhão	-3456	indireto
-Maranhão	452	direto
-Mato Grosso	-7333	indireto
-Mato Grosso	300	direto
-Mato Grosso do Sul	-1041	indireto
-Mato Grosso do Sul	60	direto
-Minas Gerais	-39016	indireto
-Minas Gerais	3249	direto
-Paraná	-39880	indireto
-Paraná	3791	direto
-Paraíba	-1553	indireto
-Paraíba	226	direto
-Pará	-7831	indireto
-Pará	550	direto
-Pernambuco	-33967	indireto
-Pernambuco	3764	direto
-Piauí	-4400	indireto
-Piauí	738	direto
-Rio de Janeiro	-60377	indireto
-Rio de Janeiro	1506	direto
-Rio Grande do Norte	-1368	indireto
-Rio Grande do Norte	176	direto
-Rio Grande do Sul	-18451	indireto
-Rio Grande do Sul	955	direto
-Rondônia	-10100	indireto
-Rondônia	313	direto
-Roraima	-4359	indireto
-Roraima	59	direto
-Santa Catarina	-10527	indireto
-Santa Catarina	409	direto
-Sergipe	-2137	indireto
-Sergipe	340	direto
-São Paulo	-75162	indireto
-São Paulo	4600	direto
-Tocantins	-2125	indireto
-Tocantins	166	direto
+estado	quantidade	ligacao totalEmpregados
+Acre	-2741	indireto	6946152
+Acre	122	direto	6946152
+Alagoas	-2159	indireto	29762910
+Alagoas	254	direto	29762910
+Amapá	-2309	indireto	6627534
+Amapá	133	direto	6627534
+Amazonas	-15300	indireto	34038822
+Amazonas	439	direto	34038822
+Bahia	-26070	indireto	131562282
+Bahia	3701	direto	131562282
+Ceará	-7390	indireto	79938576
+Ceará	829	direto	79938576
+Distrito Federal	-12148	indireto	71823726
+Distrito Federal	227	direto	71823726
+Espírito Santo	-1642	indireto	53921982
+Espírito Santo	180	direto	53921982
+Goiás	-6731	indireto	80248428
+Goiás	270	direto	80248428
+Maranhão	-3456	indireto	36731598
+Maranhão	452	direto	36731598
+Mato Grosso	-7333	indireto	41550690
+Mato Grosso	300	direto	41550690
+Mato Grosso do Sul	-1041	indireto	34900710
+Mato Grosso do Sul	60	direto	34900710
+Minas Gerais	-39016	indireto	292028592
+Minas Gerais	3249	direto	292028592
+Paraná	-39880	indireto	174765930
+Paraná	3791	direto	174765930
+Paraíba	-1553	indireto	36012192
+Paraíba	226	direto	36012192
+Pará	-7831	indireto	58618824
+Pará	550	direto	58618824
+Pernambuco	-33967	indireto	93733506
+Pernambuco	3764	direto	93733506
+Piauí	-4400	indireto	23451540
+Piauí	738	direto	23451540
+Rio de Janeiro	-60377	indireto	262099296
+Rio de Janeiro	1506	direto	262099296
+Rio Grande do Norte	-1368	indireto	35636646
+Rio Grande do Norte	176	direto	35636646
+Rio Grande do Sul	-18451	indireto	178970886
+Rio Grande do Sul	955	direto	178970886
+Rondônia	-10100	indireto	19146756
+Rondônia	313	direto	19146756
+Roraima	-4359	indireto	4021008
+Roraima	59	direto	4021008
+Santa Catarina	-10527	indireto	123386592
+Santa Catarina	409	direto	123386592
+Sergipe	-2137	indireto	22924698
+Sergipe	340	direto	22924698
+São Paulo	-75162	indireto	803599584
+São Paulo	4600	direto	803599584
+Tocantins	-2125	indireto	14462466
+Tocantins	166	direto	14462466
