@@ -8,7 +8,7 @@ d3.legend = function(g) {
     var g= d3.select(this),
         items = {},
         svg = d3.select(g.property("nearestViewportElement")),
-        legendPadding = g.attr("data-style-padding") || 5,
+        legendPadding = g.attr("data-style-padding") || 2,
         lb = g.selectAll(".legend-box").data([true]),
         li = g.selectAll(".legend-items").data([true])
 
