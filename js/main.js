@@ -1,4 +1,6 @@
-	var margin = {top: 50, right: 30, bottom: 40, left: 30},
+"use strict";
+		
+		var margin = {top: 50, right: 30, bottom: 40, left: 30},
 	    width = 960 - margin.left - margin.right,
 	    height = 500 - margin.top - margin.bottom;
 
@@ -13,7 +15,7 @@
 		    .scale(x)
 		    .orient("bottom")
 		    .ticks(13, ",.1s")
-		    .tickSize(10, -3)
+		    .tickSize(15, -3)
 		    .tickFormat(function(d){
 		    	return parseInt(Math.abs(d)).toLocaleString("pt-BR");
 		    });
@@ -25,7 +27,7 @@
 		    .tickSize(0)
 		    .tickPadding(4);
 
-		var svg = d3.select("body").append("svg")
+		var svg = d3.select("#vis1").append("svg")
 		    .attr("width", width + margin.left + margin.right)
 		    .attr("height", height + margin.top + margin.bottom)
 		  .append("g")
@@ -35,7 +37,9 @@
 		  x.domain(d3.extent(data, function(d) { return d.quantidade; })).nice();
 		  y.domain(data.map(function(d) { return d.estado; }));
 
-		  // Barras do gr?ico
+
+
+		  // Barras do gráfico
 		  svg.selectAll(".bar")
 		      .data(data)
 		    .enter().append("rect")
@@ -44,7 +48,7 @@
 		      .attr("y", function(d) { return y(d.estado); })
 		      .attr("width", function(d) { return Math.abs(x(d.quantidade) - x(0)); })
 		      .attr("height", y.rangeBand())
-		      .attr("data-legend",function(d) { return d.ligacao});
+		      .attr("data-legend",function(d) { return d.ligacao; });
 
 		  // Legenda de valores (eixo x)
 		  svg.append("g")
@@ -53,9 +57,8 @@
 		      .call(xAxis);
 
 		  var minimo = d3.min(data, function(d) {return d.quantidade; });
-		  console.log(minimo);
 
-		  // Legenda do gr?ico (eixo y)
+		  // Legenda do gráfico (eixo y)
 		  svg.append("g")
 		      .attr("class", "y axis")
 		      .attr("transform", "translate(" + x(minimo-8000) + ",0)")
@@ -67,6 +70,8 @@
 		    .style("font-size","14px")
 		    .call(d3.legend);
 
+
+		//titulo do gráfico
 		   svg.append("text")
 	        .attr("x", (width / 2) - 30)             
 	        .attr("y", 5 - (margin.top / 2))
@@ -74,7 +79,7 @@
 	        .style("font-size", "18px")
 	        .style("font-weight", "bold")
 	        .style("font-family", "sans-serif")   
-	        .text("Comparativo entre o número de empregados do setor elétrico vs número de ");
+	        .text("Comparativo de empregos diretamente vs indiretamente");
 
 	        svg.append("text")
 	        .attr("x", (width / 2) - 30)             
@@ -83,10 +88,56 @@
 	        .style("font-size", "18px") 
 	        .style("font-weight", "bold")
 	        .style("font-family", "sans-serif") 
-	        .text("empregados diretamente ligados à produção de energia elétrica no Brasil");
+	        .text(" ligados ao setor de energia elétrica no Brasil");
 		});
 
 		function type(d) {
 		  d.quantidade = +d.quantidade;
 		  return d;
 		}
+
+
+		$('#vis1-sorter').on('change', function(){
+
+			var val = $(this).val();
+
+			if (!$.trim(val)) {
+				return;
+			}
+
+			var sort = val.split("_");
+
+			var estados = [];
+
+			svg
+				.selectAll(".bar")
+				.filter(function(d){
+					return d.ligacao == sort[0];
+				})
+				.sort(function(a, b) {
+					if (sort[1] == "asc")
+						return d3.ascending(Math.abs(a.quantidade),Math.abs(b.quantidade));
+					else
+						return d3.descending(Math.abs(a.quantidade),Math.abs(b.quantidade));
+
+				})
+				.each(function(d) {
+					estados.push(d.estado);
+				});
+
+			// ordena o dominio y de estados pelo vetor construido anteriormente com os estados ordenados
+			y.domain(estados);
+			
+
+			// atualiza posicoes das barras
+			svg
+				.selectAll(".bar")
+				.transition()
+				.attr("y", function(d,i) { return y(d.estado); });
+
+			// atualiza posicoes das legendas
+			svg
+				.selectAll("g .y.axis")
+        		.call(yAxis);
+
+		});
