@@ -64,9 +64,10 @@
 		      .attr("transform", "translate(" + x(minimo-8000) + ",0)")
 		      .call(yAxis);
 		
+		  // Legenda
 		  svg.append("g")
 		    .attr("class","legend")
-		    .attr("transform","translate(850,-25)")
+		    .attr("transform","translate(770,-30)")
 		    .style("font-size","14px")
 		    .call(d3.legend);
 
