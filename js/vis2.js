@@ -77,7 +77,7 @@ d3.tsv("data/vis2.csv", type, function(error, data) {
   .style("font-size", "18px")
   .style("font-weight", "bold")
   .style("font-family", "sans-serif")
-  .text("Valor empregado por estado em obras para Geração");
+  .text("Soma do salário médio por estado em obras para Geração");
 
   svg.append("text")
   .attr("x", (width / 2) - 30)
