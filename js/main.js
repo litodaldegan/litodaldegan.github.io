@@ -61,6 +61,7 @@ var x = d3.scale.linear()
 
 		  // Legenda do gráfico (eixo y)
 		  svg.append("g")
+<<<<<<< HEAD
 		  .attr("class", "y axis")
 		  .attr("transform", "translate(" + x(minimo-8000) + ",0)")
 		  .call(yAxis);
@@ -70,6 +71,18 @@ var x = d3.scale.linear()
 		  .attr("transform","translate(850,-25)")
 		  .style("font-size","14px")
 		  .call(d3.legend);
+=======
+		      .attr("class", "y axis")
+		      .attr("transform", "translate(" + x(minimo-8000) + ",0)")
+		      .call(yAxis);
+		
+		  // Legenda
+		  svg.append("g")
+		    .attr("class","legend")
+		    .attr("transform","translate(770,-30)")
+		    .style("font-size","14px")
+		    .call(d3.legend);
+>>>>>>> 92a5f42185a74a0e0f76c3a328fe255c4b3bba86
 
 
 		//titulo do gráfico
