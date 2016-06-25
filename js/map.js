@@ -1,48 +1,3 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<head>
-	<title>Mapa Brasil - BDG</title>
-</head>
-
-<style type="text/css">
-body {
-  font: 10px sans-serif;
-}
-
-path {
-  stroke-linejoin: round;
-  stroke: #C0C0C0;
-}
-
-.states {
- 	stroke: #fff;
-}
-.d3-tip {
-  line-height: 1;
-  font-weight: bold;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  border-radius: 2px;
-}
-
-
-</style>
-
-<body>
-<div id="mapa-principal"> 
-</div>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js" charset="utf-8"></script>
-<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="//d3js.org/queue.v1.min.js"></script>
-<script src="//d3js.org/topojson.v1.min.js" charset="utf-8"></script>
-<script src="//d3js.org/d3-color.v0.5.min.js"></script>
-<script src="//d3js.org/d3-interpolate.v0.9.min.js"></script>
-<script src="//d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
-<script src="//labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-
-<script>
 $(function(){
 
 	var globalStates;
@@ -107,7 +62,10 @@ $(function(){
 
 		});
 
-	    return d3.interpolateYlGn( (qtd  - minQtd ) / maxQtd );
+		if (mapFilter == "direto")
+	    	return d3.interpolateBlues( (qtd  - minQtd ) / maxQtd );
+		else
+			return d3.interpolateOranges( (qtd  - minQtd ) / maxQtd );
 	}
 
 	function findMax(){
@@ -153,6 +111,7 @@ $(function(){
 			findMax();
 			findMin();
 
+			console.log(states.features);
 			d3
 				.select("#mapa-principal")
 				.append("svg")
@@ -181,18 +140,9 @@ $(function(){
 			findMax();
 			findMin();
 
-			svg
-				.selectAll(".states path")
+			d3
+				.selectAll("#mapa-principal .states path")
 				.style('fill', function(s){ return colorGen(s); });
 
 		});
 });
-
-</script>
-<select id="mapa-filter">
-	<option value="indireto"> -- Coloração pelos empregos indiretos -- </option>
-	<option value="direto"> -- Coloração pelos empregos diretos -- </option>
-</select>
-
-</body>
-</html>

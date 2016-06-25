@@ -1,7 +1,7 @@
 "use strict";
 		
 		var margin = {top: 50, right: 30, bottom: 40, left: 30},
-	    width = 960 - margin.left - margin.right,
+	    width = 780 - margin.left - margin.right,
 	    height = 500 - margin.top - margin.bottom;
 
 		var x = d3.scale.linear()
@@ -9,7 +9,7 @@
 
 		// Espessura das barras
 		var y = d3.scale.ordinal()
-		    .rangeRoundBands([0, height], 0.12);
+		    .rangeRoundBands([0, height], 0.10);
 
 		var xAxis = d3.svg.axis()
 		    .scale(x)

@@ -7,6 +7,13 @@
     <script src="js/d3.min.js" charset="utf-8"></script>
     <script src="js/d3plus.js" charset="utf-8"></script>
     <script src="js/d3.legend.js" chartset="uft-8"> </script>
+    <script src="//d3js.org/queue.v1.min.js"></script>
+	<script src="//d3js.org/topojson.v1.min.js" charset="utf-8"></script>
+	<script src="//d3js.org/d3-color.v0.5.min.js"></script>
+	<script src="//d3js.org/d3-interpolate.v0.9.min.js"></script>
+	<script src="//d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+	<script src="//labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" type:"text/css" href="css/main.css">
     
@@ -15,16 +22,27 @@
 </head>
 
 <body>
+<div class="container">
 	<div id="vis1"></div>
 	<select name="sort" id="vis1-sorter">
-		<option value="indireto_asc"> Opção de ordenação</option>
-		<option value="none_alf"> Indireto - Ascendente</option>
+		<option value="none_alf"> Opção de ordenação</option>
+		<option value="indireto_asc"> Indireto - Ascendente</option>
 		<option value="indireto_desc"> Indireto - Descendente </option>
 		<option value="direto_asc"> Direto - Ascendente</option>
 		<option value="direto_desc"> Direto - Descendente </option>
 		<option value="tempregados_asc"> Total de empregados - Ascendente</option>
 		<option value="tempregados_dec"> Total de empregados - Descendente </option>
 	</select> 
+	
+	<div id="mapa-principal">
+	</div>
+	    <select id="mapa-filter">
+			<option value="indireto"> -- Coloração pelos empregos indiretos -- </option>
+			<option value="direto"> -- Coloração pelos empregos diretos -- </option>
+		</select>
+</div>
+	
 	<script src="js/main.js"></script>
+	<script src="js/map.js"></script>
 </body> 
 </html>
