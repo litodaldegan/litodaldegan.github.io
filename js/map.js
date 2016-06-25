@@ -9,10 +9,6 @@ $(function(){
 	//definindo tamanho do svg
 	var width = 900,
 		height = 650;
-	//criando elemento svg
-	var svg = d3.select("body").append("svg")
-		.attr("width", width)
-		.attr("height", height);
 
 	//projecao cartografica que vai gerar o mapa
 	var projection = d3.geo.mercator()//existem outras
@@ -113,10 +109,13 @@ $(function(){
 
 			console.log(states.features);
 			d3
-				.select("#mapa-principal")
+				.select("#mapa")
+				.append("div")
+				.classed("svg-container", true)
 				.append("svg")
-				.attr("width", width)
-			    .attr("height", height)
+				.classed("svg-content-responsive", true)
+				.attr("preserveAspectRatio", "xMinYMin meet")
+   				.attr("viewBox", "0 0 900 600")
 				.append("g")
 				.attr("class","states")
 				.selectAll("path")
@@ -141,7 +140,7 @@ $(function(){
 			findMin();
 
 			d3
-				.selectAll("#mapa-principal .states path")
+				.selectAll("#mapa .states path")
 				.style('fill', function(s){ return colorGen(s); });
 
 		});

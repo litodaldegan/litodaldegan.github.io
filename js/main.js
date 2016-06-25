@@ -27,9 +27,15 @@
 		    .tickSize(0)
 		    .tickPadding(4);
 
-		var svg = d3.select("#vis1").append("svg")
-		    .attr("width", width + margin.left + margin.right)
-		    .attr("height", height + margin.top + margin.bottom)
+		var svg = d3.select("#vis1")
+			.append("div")
+			.classed("svg-container", true)
+			.append("svg")
+			.classed("svg-content-responsive", true)
+			.attr("preserveAspectRatio", "xMinYMin meet")
+   			.attr("viewBox", "0 0 900 600")
+		    //.attr("width", width + margin.left + margin.right)
+		    //.attr("height", height + margin.top + margin.bottom)
 		  .append("g")
 		    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 

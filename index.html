@@ -15,7 +15,9 @@
 	<script src="//labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" type:"text/css" href="css/main.css">
+
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
     
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
@@ -23,26 +25,36 @@
 
 <body>
 <div class="container">
-	<div id="vis1"></div>
-	<select name="sort" id="vis1-sorter">
-		<option value="none_alf"> Opção de ordenação</option>
-		<option value="indireto_asc"> Indireto - Ascendente</option>
-		<option value="indireto_desc"> Indireto - Descendente </option>
-		<option value="direto_asc"> Direto - Ascendente</option>
-		<option value="direto_desc"> Direto - Descendente </option>
-		<option value="tempregados_asc"> Total de empregados - Ascendente</option>
-		<option value="tempregados_dec"> Total de empregados - Descendente </option>
-	</select> 
-	
-	<div id="mapa-principal">
-	</div>
-	    <select id="mapa-filter">
+
+	<div class="filters">
+		<select name="sort" id="vis1-sorter">
+			<option value="none_alf"> Opção de ordenação</option>
+			<option value="indireto_asc"> Indireto - Ascendente</option>
+			<option value="indireto_desc"> Indireto - Descendente </option>
+			<option value="direto_asc"> Direto - Ascendente</option>
+			<option value="direto_desc"> Direto - Descendente </option>
+			<option value="tempregados_asc"> Total de empregados - Ascendente</option>
+			<option value="tempregados_dec"> Total de empregados - Descendente </option>
+		</select> 
+		<select id="mapa-filter">
 			<option value="indireto"> -- Coloração pelos empregos indiretos -- </option>
 			<option value="direto"> -- Coloração pelos empregos diretos -- </option>
 		</select>
+	</div>
+	<div class="top-row clearfix">
+		<div id="vis1"></div>
+		<div id="mapa"></div>
+	</div>
+	<div class="bottom-row clearfix">
+		<div id="vis2"></div>
+	</div>
+	
+	
+	    
 </div>
 	
 	<script src="js/main.js"></script>
 	<script src="js/map.js"></script>
+	<script src= "js/vis2.js"></script>
 </body> 
 </html>

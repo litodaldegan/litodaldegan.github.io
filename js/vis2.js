@@ -1,140 +1,152 @@
-var margin = {top: 60, right: 20, bottom: 30, left: 70},
-width = 960 - margin.left - margin.right,
-height = 500 - margin.top - margin.bottom;
+$(function(){
 
-var formatPercent = d3.format(".0%");
+    var margin = {top: 60, right: 20, bottom: 30, left: 70},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
-var x = d3.scale.ordinal()
-.rangeRoundBands([0, width+20], .1);
+    var formatPercent = d3.format(".0%");
 
-var y = d3.scale.linear()
-.range([height, 0]);
+    var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width+20], .1);
 
-var xAxis = d3.svg.axis()
-.scale(x)
-.orient("bottom");
+    var y = d3.scale.linear()
+    .range([height, 0]);
 
-var yAxis = d3.svg.axis()
-.scale(y)
-.orient("left")
-.ticks(4)
-.tickFormat(function(d){
-  return parseInt(Math.abs(d)).toLocaleString("pt-BR");
-});
+    var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
 
-var tip = d3.tip()
-.attr('class', 'd3-tip')
-.offset([-10, 0])
-.html(function(d) {
-  return "<strong>Quantidade:</strong> <span style='color:red'>" + d.quantidade + "</span>";
-})
+    var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .ticks(4)
+    .tickFormat(function(d){
+        return parseInt(Math.abs(d)).toLocaleString("pt-BR");
+    });
 
-var svg = d3.select("body").append("svg")
-.attr("width", width + margin.left + margin.right)
-.attr("height", height + margin.top + margin.bottom)
-.append("g")
-.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    var tip = d3.tip()
+    .attr('class', 'd3-tip')
+    .offset([-10, 0])
+    .html(function(d) {
+        return "<strong>Quantidade:</strong> <span style='color:red'>" + d.quantidade + "</span>";
+    })
 
-svg.call(tip);
 
-d3.tsv("data/vis2.csv", type, function(error, data) {
-  x.domain(data.map(function(d) { return d.estado; }));
-  y.domain([0, d3.max(data, function(d) { return d.quantidade; })]);
-  var minimo = d3.min(data, function(d) { return d.quantidade; });
-  svg.append("g")
-  .attr("class", "x axis")
-  .attr("transform", "translate(0," + height + ")")
-  .call(xAxis);
+    svg.call(tip);
 
-  svg.append("g")
-  .attr("class", "y axis")
-  .call(yAxis)
-  .append("text")
-  .attr("transform", "rotate(-90)")
-  .attr("y", 6)
-  .attr("dy", ".71em")
-  .style("text-anchor", "end")
-  .text("Quantidade");
+    d3.tsv("data/vis2.csv", type, function(error, data) {
+        x.domain(data.map(function(d) { return d.estado; }));
+        y.domain([0, d3.max(data, function(d) { return d.quantidade; })]);
+        var minimo = d3.min(data, function(d) { return d.quantidade; });
 
-  svg.selectAll(".bar")
-  .data(data)
-  .enter().append("rect")
-  .attr("class", "bar")
-  .attr("x", function(d) { return x(d.estado); })
-  .attr("width", x.rangeBand())
-  .attr("y", function(d) { return y(d.quantidade); })
-  .attr("height", function(d) { return height - y(d.quantidade); })
-  .attr("fill",function(d){
-			return "rgb(" + (d3.round((d.quantidade / minimo) * 32)) + "," + (d3.round((d.quantidade / minimo) * 20)) + ",0)";
-	  })
-  .on('mouseover', tip.show)
-  .on('mouseout', tip.hide);
+        var svg = 
+        d3
+        .select("#vis2")
+        .append("div")
+        .classed("svg-container", true)
+        .append("svg")
+        .classed("svg-content-responsive", true)
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", "0 0 900 600");
 
-  svg.append("text")
-  .attr("x", (width / 2) - 30)
-  .attr("y", 0 - (margin.top / 2))
-  .attr("text-anchor", "middle")
-  .style("font-size", "18px")
-  .style("font-weight", "bold")
-  .style("font-family", "sans-serif")
-  .text("Soma do salário médio por estado em obras para Geração");
+        svg.append("g")
+        .append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
 
-  svg.append("text")
-  .attr("x", (width / 2) - 30)
-  .attr("y", 20 - (margin.top / 2))
-  .attr("text-anchor", "middle")
-  .style("font-size", "18px")
-  .style("font-weight", "bold")
-  .style("font-family", "sans-serif")
-  .text("e Distribuição de energia elétrica no Brasil");
+        svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis)
+        .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Quantidade");
 
-  d3.select("#ordena").on("click", function(d){
-    change("maiorMenor");
-  });
+        svg.selectAll(".bar")
+        .data(data)
+        .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", function(d) { return x(d.estado); })
+        .attr("width", x.rangeBand())
+        .attr("y", function(d) { return y(d.quantidade); })
+        .attr("height", function(d) { return height - y(d.quantidade); })
+        .attr("fill",function(d){
+            return "rgb(" + (d3.round((d.quantidade / minimo) * 32)) + "," + (d3.round((d.quantidade / minimo) * 20)) + ",0)";
+        })
+        .on('mouseover', tip.show)
+        .on('mouseout', tip.hide);
 
-  d3.select("#default").on("click", function(d){
-    change("default");
-  });
+        svg.append("text")
+        .attr("x", (width / 2) - 30)
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")
+        .style("font-size", "18px")
+        .style("font-weight", "bold")
+        .style("font-family", "sans-serif")
+        .text("Soma do salário médio por estado em obras para Geração");
 
-  var ordena = false;
+        svg.append("text")
+        .attr("x", (width / 2) - 30)
+        .attr("y", 20 - (margin.top / 2))
+        .attr("text-anchor", "middle")
+        .style("font-size", "18px")
+        .style("font-weight", "bold")
+        .style("font-family", "sans-serif")
+        .text("e Distribuição de energia elétrica no Brasil");
 
-  function change(ordenacao) {
+        d3.select("#ordena").on("click", function(d){
+            change("maiorMenor");
+        });
 
-    clearTimeout(1500);
+        d3.select("#default").on("click", function(d){
+            change("default");
+        });
 
-    if(ordenacao === "maiorMenor"){
-      ordena = !ordena;
-      // Copy-on-write since tweens are evaluated after a delay.
-      var x0 = x.domain(data.sort(ordena
-        ? function(a, b) { return b.quantidade - a.quantidade; }
-        : function(a, b) { return a.quantidade - b.quantidade;})
-        .map(function(d) { return d.estado;}))
-        .copy();
-      }else if(ordenacao === "default"){
-        var x0 = x.domain(data.sort(function(a, b) { return d3.ascending(a.estado, b.estado); })
-        .map(function(d) { return d.estado;}))
-        .copy();
-      }
+        var ordena = false;
 
-      svg.selectAll(".bar")
-      .sort(function(a, b) { return x0(a.estado) - x0(b.estado); });
+        function change(ordenacao) {
 
-      var transition = svg.transition().duration(750),
-      delay = function(d, i) { return i * 50; };
+            clearTimeout(1500);
 
-      transition.selectAll(".bar")
-      .delay(delay)
-      .attr("x", function(d) { return x0(d.estado); });
+            if(ordenacao === "maiorMenor"){
+                ordena = !ordena;
+            // Copy-on-write since tweens are evaluated after a delay.
+            var x0 = x.domain(data.sort(ordena
+                ? function(a, b) { return b.quantidade - a.quantidade; }
+                : function(a, b) { return a.quantidade - b.quantidade; })
+                .map(function(d) { return d.estado;}))
+                .copy();
+            }else if(ordenacao === "default"){
+                var x0 = x.domain(data.sort(function(a, b) { return d3.ascending(a.estado, b.estado); })
+                    .map(function(d) { return d.estado;}))
+                .copy();
+            }
 
-      transition.select(".x.axis")
-      .call(xAxis)
-      .selectAll("g")
-      .delay(delay);
+    svg.selectAll(".bar")
+    .sort(function(a, b) { return x0(a.estado) - x0(b.estado); });
+
+    var transition = svg.transition().duration(750),
+    delay = function(d, i) { return i * 50; };
+
+    transition.selectAll(".bar")
+    .delay(delay)
+    .attr("x", function(d) { return x0(d.estado); });
+
+    transition.select(".x.axis")
+    .call(xAxis)
+    .selectAll("g")
+    .delay(delay);
     }
 
-  });
+    });
 
-  function type(d) {
-    d.quantidade = +d.quantidade;
-    return d;
-  }
+    function type(d) {
+        d.quantidade = +d.quantidade;
+        return d;
+    }
+
+
+});
