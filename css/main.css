@@ -87,9 +87,8 @@ path {
 }
 
 #vis2{
-  float: left;
-  width: 50%;
+  width: 100%;
 }
 #vis2 .svg-container{
-  padding-bottom: 54%;
+  padding-bottom: 42%;
 }
