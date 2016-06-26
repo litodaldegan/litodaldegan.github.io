@@ -28,7 +28,7 @@ $(function(){
     .attr('class', 'd3-tip')
     .offset([-10, 0])
     .html(function(d) {
-        return "<strong>Quantidade:</strong> <span style='color:red'>" + d.quantidade + "</span>";
+        return "<strong>Amount:</strong> <span style='color:red'>" + d.quantidade + "</span>";
     })
 
 
