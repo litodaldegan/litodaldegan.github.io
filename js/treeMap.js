@@ -33,6 +33,14 @@ $(function(){
 	    ]
 	};
 
+	var tip = d3.tip()
+	  .attr('class', 'd3-tip')
+	  .html(function(s) {
+	  		return 'teste';
+			return "<div style='text-align: center'><strong>" + '1' + "</strong></div><br/><strong>Empregados:</strong> <span style='color:red'>" + '1' + "</span>";
+
+	  });
+
 	var width = $("#vis3").parent().width(),
 	    height = 600,
 	    color = d3.scale.linear().domain([0,190000]).range(["LightGray","darkblue"]),
@@ -49,6 +57,14 @@ $(function(){
 	      .data(treemap.nodes)
 	    	.enter().append("div")
 	      .attr("class", "node")
+	      .attr("data-toggle", "tooltip")
+	      .attr("data-placement", "top")
+	      .attr("data-title",function(d){
+	      	return d.size;
+	      })
+	      .attr("data-state", function(d){
+	      	return d.name;
+	      })
 	      .call(position)
 	      .style("background-color", function(d) {
 	          return d.size == 'tree' ? '#fff' : color(d.size); })
@@ -56,7 +72,10 @@ $(function(){
 	      .style("font-size", function(d) {
 	          // compute font size based on sqrt(area)
 	          return Math.max(8, 0.15*Math.sqrt(d.area))+'px'; })
-	      .text(function(d) { return d.children ? null : (d.name + ", " + d.size); });
+	      .text(function(d) { return d.children ? null : (d.name + ", " + d.size); })
+	      $('#vis3 .node').tooltip();
+
+
 
 	function position() {
 	  this.style("left", function(d) { return d.x + "px"; })

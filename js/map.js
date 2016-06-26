@@ -107,7 +107,6 @@ $(function(){
 			findMax();
 			findMin();
 
-			console.log(states.features);
 			d3
 				.select("#mapa")
 				.append("div")
