@@ -40,8 +40,8 @@
 		    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 		d3.tsv("data/nEmpregados.csv", type, function(error, data) {
-		  x.domain(d3.extent(data, function(d) { return d.quantidade; })).nice();
-		  y.domain(data.map(function(d) { return d.estado; }));
+		  x.domain(d3.extent(data, function(d) { return d.amount; })).nice();
+		  y.domain(data.map(function(d) { return d.state; }));
 
 
 
@@ -49,12 +49,12 @@
 		  svg.selectAll(".bar")
 		      .data(data)
 		    .enter().append("rect")
-		      .attr("class", function(d) { return "bar bar--" + (d.ligacao == "indireto" ? "negative" : "positive"); })
-		      .attr("x", function(d) { return x(Math.min(0, d.quantidade)); })
-		      .attr("y", function(d) { return y(d.estado); })
-		      .attr("width", function(d) { return Math.abs(x(d.quantidade) - x(0)); })
+		      .attr("class", function(d) { return "bar bar--" + (d.connection == "indirect" ? "negative" : "positive"); })
+		      .attr("x", function(d) { return x(Math.min(0, d.amount)); })
+		      .attr("y", function(d) { return y(d.state); })
+		      .attr("width", function(d) { return Math.abs(x(d.amount) - x(0)); })
 		      .attr("height", y.rangeBand())
-		      .attr("data-legend",function(d) { return d.ligacao; });
+		      .attr("data-legend",function(d) { return d.connection; });
 
 		  // Legenda de valores (eixo x)
 		  svg.append("g")
@@ -62,7 +62,7 @@
 		      .attr("transform", "translate(0," + height + ")")
 		      .call(xAxis);
 
-		  var minimo = d3.min(data, function(d) {return d.quantidade; });
+		  var minimo = d3.min(data, function(d) {return d.amount; });
 
 		  // Legenda do gráfico (eixo y)
 		  svg.append("g")
@@ -86,7 +86,8 @@
 	        .style("font-size", "18px")
 	        .style("font-weight", "bold")
 	        .style("font-family", "sans-serif")   
-	        .text("Comparativo de empregos diretamente vs indiretamente");
+	        .text("Comparative of indirect jobs vs direct jobs");
+	        /*Comparativo de empregos diretamente vs indiretamente*/
 
 	        svg.append("text")
 	        .attr("x", (width / 2) - 30)             
@@ -95,12 +96,13 @@
 	        .style("font-size", "18px") 
 	        .style("font-weight", "bold")
 	        .style("font-family", "sans-serif") 
-	        .text(" ligados ao setor de energia elétrica no Brasil");
+	        .text("for the electric energy sector in Brazil");
+	        /* ligados ao setor de energia elétrica no Brasil*/
 		});
 
 		function type(d) {
-		  d.quantidade = +d.quantidade;
-		  d.totalempregados = +d.totalempregados;
+		  d.amount = +d.amount;
+		  d.totalEmployees = +d.totalEmployees;
 		  return d;
 		}
 
@@ -120,33 +122,33 @@
 			svg
 				.selectAll(".bar")
 				.filter(function(d){
-					if (sort[0] == "direto" || sort[0] == "indireto")
-						return d.ligacao == sort[0];
+					if (sort[0] == "direct" || sort[0] == "indirect")
+						return d.connection == sort[0];
 
 					if (sort[0] == "tempregados")
-						return d.totalempregados;
+						return d.totalEmployees;
 
-					return d.estado;
+					return d.state;
 				})
 				.sort(function(a, b) {
-					if (sort[0] == "direto" || sort[0] == "indireto") {
+					if (sort[0] == "direct" || sort[0] == "indirect") {
 						if (sort[1] == "asc")
-							return d3.ascending(Math.abs(a.quantidade),Math.abs(b.quantidade));
+							return d3.ascending(Math.abs(a.amount),Math.abs(b.amount));
 						else
-							return d3.descending(Math.abs(a.quantidade),Math.abs(b.quantidade));
+							return d3.descending(Math.abs(a.amount),Math.abs(b.amount));
 					}
 
 					if (sort[0] == "tempregados") {
 						if (sort[1] == "asc")
-							return d3.ascending(a.totalempregados,b.totalempregados);
+							return d3.ascending(a.totalEmployees,b.totalEmployees);
 						else
-							return d3.descending(a.totalempregados,b.totalempregados);
+							return d3.descending(a.totalEmployees,b.totalEmployees);
 					}
 
-					return d3.ascending(a.estado, b.estado);
+					return d3.ascending(a.state, b.state);
 				})
 				.each(function(d) {
-					estados.push(d.estado);
+					estados.push(d.state);
 				});
 
 			// ordena o dominio y de estados pelo vetor construido anteriormente com os estados ordenados
@@ -157,7 +159,7 @@
 			svg
 				.selectAll(".bar")
 				.transition()
-				.attr("y", function(d,i) { return y(d.estado); });
+				.attr("y", function(d,i) { return y(d.state); });
 
 			// atualiza posicoes das legendas
 			svg

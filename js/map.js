@@ -2,7 +2,7 @@ $(function(){
 
 	var globalStates;
 	var globalData;
-	var mapFilter = "indireto";
+	var mapFilter = "indirect";
 	var maxQtd = 0;
 	var minQtd = 0;
 
@@ -20,7 +20,6 @@ $(function(){
 		.projection(projection)
 		.pointRadius(2.5);//vai desenhar na tela de acordo com a projecao cartografica
 
-
 	var tip = d3.tip()
 	  .attr('class', 'd3-tip')
 	  .offset([-10, 0])
@@ -29,17 +28,17 @@ $(function(){
 	  	var qtd = "";
 	  	var estado = "";
 		$.each(globalData, function(i, d){
-					if (d.ligacao == mapFilter) {
+					if (d.connection == mapFilter) {
 
-						if (d.estado.toLowerCase() == s.properties.name.toLowerCase()) {
-							qtd = Math.abs(d.quantidade);
-							estado = d.estado;
+						if (d.state.toLowerCase() == s.properties.name.toLowerCase()) {
+							qtd = Math.abs(d.amount);
+							estado = d.state;
 						}
 					}
 
 				});
 		if (estado)
-			return "<div style='text-align: center'><strong>" + estado + "</strong></div><br/><strong>Empregados:</strong> <span style='color:red'>" + qtd + "</span>";
+			return "<div style='text-align: center'><strong>" + estado + "</strong></div><br/><strong>Employees:</strong> <span style='color:red'>" + qtd + "</span>";
 		else
 			return "-";
 	  });
@@ -50,15 +49,15 @@ $(function(){
 		var qtd = 0;
 		//Identifica o estado correspondente para interpolar a cor
 		$.each(globalData, function(i, d){
-			if (d.ligacao == mapFilter) {
-				if (d.estado.toLowerCase() == s.properties.name.toLowerCase()) {
-					qtd = Math.abs(d.quantidade);
+			if (d.connection == mapFilter) {
+				if (d.state.toLowerCase() == s.properties.name.toLowerCase()) {
+					qtd = Math.abs(d.amount);
 				}
 			}
 
 		});
 
-		if (mapFilter == "direto")
+		if (mapFilter == "direct")
 	    	return d3.interpolateBlues( (qtd  - minQtd ) / maxQtd );
 		else
 			return d3.interpolateOranges( (qtd  - minQtd ) / maxQtd );
@@ -68,9 +67,9 @@ $(function(){
 		maxQtd = 0;
 		$.each(globalData, function(i, d){
 
-			if (d.ligacao == mapFilter) {
+			if (d.connection == mapFilter) {
 
-				var qtd = Math.abs(d.quantidade);
+				var qtd = Math.abs(d.amount);
 				if (qtd > maxQtd) {
 					maxQtd = qtd;
 				}
@@ -83,9 +82,9 @@ $(function(){
 		minQtd = Infinity;
 		$.each(globalData, function(i, d){
 
-			if (d.ligacao == mapFilter) {
+			if (d.connection == mapFilter) {
 
-				var qtd = Math.abs(d.quantidade);
+				var qtd = Math.abs(d.amount);
 				if (qtd < minQtd) {
 					minQtd = qtd;
 				}
