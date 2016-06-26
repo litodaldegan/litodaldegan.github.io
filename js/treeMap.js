@@ -58,7 +58,7 @@ $(function(){
 	      	.attr("data-toggle", "tooltip")
 	      	.attr("data-placement", "top")
 	      	.attr("data-title",function(d) {
-	      		return d.size + " estudantes em " d.name;
+	      		return d.size + " estudantes em " + d.name;
 	      	})
 	      	.attr("data-state", function(d){
 	      		return d.name;
