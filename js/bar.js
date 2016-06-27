@@ -1,6 +1,6 @@
 $(function(){
 
-    var margin = {top: 60, right: 20, bottom: 30, left: 70},
+    var margin = {top: 30, right: 20, bottom: 30, left: 70},
     width = 960 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
@@ -91,22 +91,41 @@ $(function(){
         .attr("x", (width / 2) - 30)
         .attr("y",20)
         .attr("text-anchor", "middle")
-        .style("font-size", "16px")
+        .style("font-size", "20px")
         .style("font-weight", "bold")
         .style("font-family", "sans-serif")
-        .text("Soma do salário médio por estado em obras para Geração");
+        .text("Sum of average salary per state in construction for generation");
+        // Soma do salário médio por estado em obras para Geração
 
         svg.append("text")
         .attr("x", (width / 2) - 30)
         .attr("y", 40)
         .attr("text-anchor", "middle")
-        .style("font-size", "16px")
+        .style("font-size", "20px")
         .style("font-weight", "bold")
         .style("font-family", "sans-serif")
-        .text("e Distribuição de energia elétrica no Brasil");
+        .text("and distribution of electric energy in Brazil");
+        // e Distribuição de energia elétrica no Brasil
 
         d3.select("#ordena").on("click", function(d){
             change("maiorMenor");
+        });
+
+        $('#vis1-sorter').on('change', function(d){
+            var val = $(this).val();
+            var sort = val.split("_");
+
+            if (sort[1] == "alf")
+                change("default");
+            else {
+                if (sort[0] == "direct"){
+                    if (sort[1] == "asc"){
+                        change("maiorMenor");
+                        change("maiorMenor");
+                    }
+                    else
+                        change("maiorMenor");}
+                }
         });
 
         d3.select("#default").on("click", function(d){

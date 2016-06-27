@@ -22,15 +22,16 @@
 </head>
 
 <body>
+<h1>Study of the electric energy production in Brazil</h1>
 <div class="container">
 
 	<div class="filters">
 		<select name="sort" id="vis1-sorter">
-			<option value="none_alf" text-align: right> Option of ordination</option>
+			<option value="none_alf" id="default"> Option of ordination</option>
 			<option value="indirect_asc"> Indirect jobs - ascending order</option>
 			<option value="indirect_desc"> Indirect jobs - descending order</option>
-			<option value="direct_asc" id="default"> Direct jobs - ascending order</option>
-			<option value="direct_desc" id="ordena"> Direct jobs - descending order</option>
+			<option value="direct_asc" id="ordena"> Direct jobs - ascending order</option>
+			<option value="direct_desc" > Direct jobs - descending order</option>
 			<option value="tempregados_asc"> Total employees in state - ascending order</option>
 			<option value="tempregados_dec"> Total employees in state - descending order</option>
 		</select> 
@@ -45,7 +46,10 @@
 	</div>
 	<div class="bottom-row clearfix">
 		<div id="vis2"></div>
-		<div id="vis3"></div>
+
+		<div id="vis3">
+			<h2>Number of future professionals in energy generation</h2>
+		</div>
 	</div>
 	
 	    <!-- total da soma das médias de salário por estado -->
