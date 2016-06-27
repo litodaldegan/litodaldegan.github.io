@@ -37,10 +37,12 @@ $(function(){
     d3.tsv("data/statesData.csv", type, function(error, data) {
         x.domain(data.map(function(d) { 
             if (d.connection == "direct")
-                return d.initials; }));
+                return d.initials; 
+        }));
         y.domain([0, d3.max(data, function(d) { 
             if (d.connection == "direct")
-                return d.totalSalary; })]);
+                return d.totalSalary; 
+        }) + 1000000]);
         var minimo = d3.min(data, function(d) { 
             if (d.connection == "direct")
                 return d.totalSalary; });
@@ -87,18 +89,18 @@ $(function(){
 
         svg.append("text")
         .attr("x", (width / 2) - 30)
-        .attr("y", 0 - (margin.top / 2))
+        .attr("y",20)
         .attr("text-anchor", "middle")
-        .style("font-size", "18px")
+        .style("font-size", "16px")
         .style("font-weight", "bold")
         .style("font-family", "sans-serif")
         .text("Soma do salário médio por estado em obras para Geração");
 
         svg.append("text")
         .attr("x", (width / 2) - 30)
-        .attr("y", 20 - (margin.top / 2))
+        .attr("y", 40)
         .attr("text-anchor", "middle")
-        .style("font-size", "18px")
+        .style("font-size", "16px")
         .style("font-weight", "bold")
         .style("font-family", "sans-serif")
         .text("e Distribuição de energia elétrica no Brasil");

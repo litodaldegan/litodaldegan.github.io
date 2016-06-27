@@ -39,7 +39,7 @@ $(function(){
 			return "<div style='text-align: center'><strong>" + '1' + "</strong></div><br/><strong>Empregados:</strong> <span style='color:red'>" + '1' + "</span>";
 	 	});
 
-	var width = $("#vis3").parent().width(),
+	var width = $("#vis3").parent().width() * 0.45,
 	    	height = 600,
 	    	color = d3.scale.linear().domain([0,190000]).range(["LightGray","darkblue"]),
 	    	div = d3.select("#vis3")

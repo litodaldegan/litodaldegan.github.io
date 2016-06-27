@@ -93,8 +93,15 @@ path {
 }
 
 #vis2{
-  width: 100%;
+  width: 55%;
+  float: left;
 }
 #vis2 .svg-container{
   padding-bottom: 42%;
+}
+
+
+#vis3{
+  width: 45%;
+  float: left;
 }
