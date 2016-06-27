@@ -5,7 +5,6 @@
     <title>Electric energy - Brazil</title>
     <script src="js/jquery.min.js" charset="utf-8"></script>
     <script src="js/d3.min.js" charset="utf-8"></script>
-    <script src="js/d3plus.js" charset="utf-8"></script>
     <script src="js/d3.legend.js" chartset="uft-8"> </script>
     <script src="//d3js.org/queue.v1.min.js"></script>
 	<script src="//d3js.org/topojson.v1.min.js" charset="utf-8"></script>
@@ -30,8 +29,8 @@
 			<option value="none_alf" text-align: right> Option of ordination</option>
 			<option value="indirect_asc"> Indirect jobs - ascending order</option>
 			<option value="indirect_desc"> Indirect jobs - descending order</option>
-			<option value="direct_asc"> Direct jobs - ascending order</option>
-			<option value="direct_desc"> Direct jobs - descending order</option>
+			<option value="direct_asc" id="default"> Direct jobs - ascending order</option>
+			<option value="direct_desc" id="ordena"> Direct jobs - descending order</option>
 			<option value="tempregados_asc"> Total employees in state - ascending order</option>
 			<option value="tempregados_dec"> Total employees in state - descending order</option>
 		</select> 
@@ -49,8 +48,7 @@
 		<div id="vis3"></div>
 	</div>
 	
-	
-	    
+	    <!-- total da soma das médias de salário por estado -->
 </div>
 	<script src="js/bullet.js"></script>
 	<script src="js/map.js"></script>

@@ -1,0 +1,55 @@
+state	initials	amount	connection	totalEmployees	totalSalary
+Acre	AC	-2741	indirect	6946152	1300022.17
+Acre	AC	122	direct	6946152	1300022.17
+Alagoas	AL	-2159	indirect	29762910	603769.75
+Alagoas	AL	254	direct	29762910	603769.75
+Amapá	AP	-2309	indirect	6627534	1272248.8
+Amapá	AP	133	direct	6627534	1272248.8
+Amazonas	AM	-15300	indirect	34038822	1765350.8
+Amazonas	AM	439	direct	34038822	1765350.8
+Bahia	BA	-26070	indirect	131562282	1643389.61
+Bahia	BA	3701	direct	131562282	1643389.61
+Ceará	CE	-7390	indirect	79938576	2183203.41
+Ceará	CE	829	direct	79938576	2183203.41
+Distrito Federal	DF	-12148	indirect	71823726	2453486.43
+Distrito Federal	DF	227	direct	71823726	2453486.43
+Espírito Santo	ES	-1642	indirect	53921982	1034458.01
+Espírito Santo	ES	180	direct	53921982	1034458.01
+Goiás	GO	-6731	indirect	80248428	2211918.62
+Goiás	GO	270	direct	80248428	2211918.62
+Maranhão	MA	-3456	indirect	36731598	2211843.56
+Maranhão	MA	452	direct	36731598	2211843.56
+Mato Grosso	MT	-7333	indirect	41550690	2468085.93
+Mato Grosso	MT	300	direct	41550690	2468085.93
+Mato Grosso do Sul	MS	-1041	indirect	34900710	1537152.04
+Mato Grosso do Sul	MS	60	direct	34900710	1537152.04
+Minas Gerais	MG	-39016	indirect	292028592	3259399.26
+Minas Gerais	MG	3249	direct	292028592	3259399.26
+Paraná	PR	-39880	indirect	174765930	2407979.15
+Paraná	PR	3791	direct	174765930	2407979.15
+Paraíba	PB	-1553	indirect	36012192	743406.14
+Paraíba	PB	226	direct	36012192	743406.14
+Pará	PA	-7831	indirect	58618824	4412502.36
+Pará	PA	550	direct	58618824	4412502.36
+Pernambuco	PE	-33967	indirect	93733506	1558874.9
+Pernambuco	PE	3764	direct	93733506	1558874.9
+Piauí	PI	-4400	indirect	23451540	822518.12
+Piauí	PI	738	direct	23451540	822518.12
+Rio de Janeiro	RJ	-60377	indirect	262099296	3957947.2
+Rio de Janeiro	RJ	1506	direct	262099296	3957947.2
+Rio Grande do Norte	RN	-1368	indirect	35636646	1234820.8
+Rio Grande do Norte	RN	176	direct	35636646	1234820.8
+Rio Grande do Sul	RS	-18451	indirect	178970886	2348014.1
+Rio Grande do Sul	RS	955	direct	178970886	2348014.1
+Rondônia	RO	-10100	indirect	19146756	3724918.2
+Rondônia	RO	313	direct	19146756	3724918.2
+Roraima	RR	-4359	indirect	4021008	756669.84
+Roraima	RR	59	direct	4021008	756669.84
+Santa Catarina	SC	-10527	indirect	123386592	2134497.26
+Santa Catarina	SC	409	direct	123386592	2134497.26
+Sergipe	SE	-2137	indirect	22924698	801453.73
+Sergipe	SE	340	direct	22924698	801453.73
+São Paulo	SP	-75162	indirect	803599584	4114458.99
+São Paulo	SP	4600	direct	803599584	4114458.99
+Tocantins	TO	-2125	indirect	14462466	1693737.91
+Tocantins	TO	166	direct	14462466	1693737.91

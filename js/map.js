@@ -95,7 +95,7 @@ $(function(){
 
 	queue()
 		.defer(d3.json,"data/states.json")
-		.defer(d3.tsv,"data/nEmpregados.csv")
+		.defer(d3.tsv,"data/statesData.csv")
 		.await(function(error, states, data){
 			
 			globalData = data;

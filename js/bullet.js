@@ -39,7 +39,7 @@
 		  .append("g")
 		    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-		d3.tsv("data/nEmpregados.csv", type, function(error, data) {
+		d3.tsv("data/statesData.csv", type, function(error, data) {
 		  x.domain(d3.extent(data, function(d) { return d.amount; })).nice();
 		  y.domain(data.map(function(d) { return d.state; }));
 

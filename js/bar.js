@@ -28,16 +28,22 @@ $(function(){
     .attr('class', 'd3-tip')
     .offset([-10, 0])
     .html(function(d) {
-        return "<strong>Amount:</strong> <span style='color:red'>" + d.quantidade + "</span>";
+        return "<strong>Amount:</strong> <span style='color:red'>" + d.totalSalary + "</span>";
     })
 
 
     svg.call(tip);
 
-    d3.tsv("data/vis2.csv", type, function(error, data) {
-        x.domain(data.map(function(d) { return d.estado; }));
-        y.domain([0, d3.max(data, function(d) { return d.quantidade; })]);
-        var minimo = d3.min(data, function(d) { return d.quantidade; });
+    d3.tsv("data/statesData.csv", type, function(error, data) {
+        x.domain(data.map(function(d) { 
+            if (d.connection == "direct")
+                return d.initials; }));
+        y.domain([0, d3.max(data, function(d) { 
+            if (d.connection == "direct")
+                return d.totalSalary; })]);
+        var minimo = d3.min(data, function(d) { 
+            if (d.connection == "direct")
+                return d.totalSalary; });
 
         var svg = 
         d3
@@ -63,18 +69,18 @@ $(function(){
         .attr("y", 6)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text("Quantidade");
+        .text("Amount");
 
         svg.selectAll(".bar")
         .data(data)
         .enter().append("rect")
         .attr("class", "bar")
-        .attr("x", function(d) { return x(d.estado); })
+        .attr("x", function(d) { return x(d.initials); })
         .attr("width", x.rangeBand())
-        .attr("y", function(d) { return y(d.quantidade); })
-        .attr("height", function(d) { return height - y(d.quantidade); })
+        .attr("y", function(d) { return y(d.totalSalary); })
+        .attr("height", function(d) { return height - y(d.totalSalary); })
         .attr("fill",function(d){
-            return "rgb(" + (d3.round((d.quantidade / minimo) * 32)) + "," + (d3.round((d.quantidade / minimo) * 20)) + ",0)";
+            return "rgb(" + (d3.round((d.totalSalary / minimo) * 32)) + "," + (d3.round((d.totalSalary / minimo) * 20)) + ",0)";
         })
         .on('mouseover', tip.show)
         .on('mouseout', tip.hide);
@@ -115,25 +121,25 @@ $(function(){
                 ordena = !ordena;
             // Copy-on-write since tweens are evaluated after a delay.
             var x0 = x.domain(data.sort(ordena
-                ? function(a, b) { return b.quantidade - a.quantidade; }
-                : function(a, b) { return a.quantidade - b.quantidade; })
-                .map(function(d) { return d.estado;}))
+                ? function(a, b) { return b.totalSalary - a.totalSalary; }
+                : function(a, b) { return a.totalSalary - b.totalSalary; })
+                .map(function(d) { return d.initials;}))
                 .copy();
             }else if(ordenacao === "default"){
-                var x0 = x.domain(data.sort(function(a, b) { return d3.ascending(a.estado, b.estado); })
-                    .map(function(d) { return d.estado;}))
+                var x0 = x.domain(data.sort(function(a, b) { return d3.ascending(a.initials, b.initials); })
+                    .map(function(d) { return d.initials;}))
                 .copy();
             }
 
     svg.selectAll(".bar")
-    .sort(function(a, b) { return x0(a.estado) - x0(b.estado); });
+    .sort(function(a, b) { return x0(a.initials) - x0(b.initials); });
 
     var transition = svg.transition().duration(750),
     delay = function(d, i) { return i * 50; };
 
     transition.selectAll(".bar")
     .delay(delay)
-    .attr("x", function(d) { return x0(d.estado); });
+    .attr("x", function(d) { return x0(d.initials); });
 
     transition.select(".x.axis")
     .call(xAxis)
@@ -144,7 +150,7 @@ $(function(){
     });
 
     function type(d) {
-        d.quantidade = +d.quantidade;
+        d.totalSalary = +d.totalSalary;
         return d;
     }
 
