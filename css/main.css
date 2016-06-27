@@ -26,6 +26,17 @@ h2 {
   text-align-last: center;
 }
 
+h3 {
+  font: 14px sans-serif;
+  margin-top: 2px;
+  margin-bottom: -22px;
+  text-anchor: middle;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-align: center;
+  text-align-last: center;
+}
+
 .filters {
   text-align: center;
 }

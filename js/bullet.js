@@ -28,16 +28,28 @@
 		    .tickPadding(4);
 
 		var svg = d3.select("#vis1")
-			.append("div")
-			.classed("svg-container", true)
-			.append("svg")
-			.classed("svg-content-responsive", true)
-			.attr("preserveAspectRatio", "xMinYMin meet")
-   			.attr("viewBox", "0 0 900 600")
-		    //.attr("width", width + margin.left + margin.right)
-		    //.attr("height", height + margin.top + margin.bottom)
-		  .append("g")
-		    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+				.append("div")
+				.classed("svg-container", true)
+				.append("svg")
+				.classed("svg-content-responsive", true)
+				.attr("preserveAspectRatio", "xMinYMin meet")
+	   			.attr("viewBox", "0 0 900 600")
+			    //.attr("width", width + margin.left + margin.right)
+			    //.attr("height", height + margin.top + margin.bottom)
+			  	.append("g")
+			    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+		var tip = d3.tip()
+		    .attr('class', 'd3-tip')
+		    .offset([-10, 0])
+		    .html(function(d) {
+		    	if (d.connection == "direct")
+		        	return "<strong>Direct jobs:</strong> <span style='color:red'>" + d.amount + "</span>";
+	    		else
+	    			return "<strong>Indirect jobs:</strong> <span style='color:red'>" + (-d.amount) + "</span>";
+	    })
+
+		svg.call(tip);
 
 		d3.tsv("data/statesData.csv", type, function(error, data) {
 		  x.domain(d3.extent(data, function(d) { return d.amount; })).nice();
@@ -54,7 +66,9 @@
 		      .attr("y", function(d) { return y(d.state); })
 		      .attr("width", function(d) { return Math.abs(x(d.amount) - x(0)); })
 		      .attr("height", y.rangeBand())
-		      .attr("data-legend",function(d) { return d.connection; });
+		      .attr("data-legend",function(d) { return d.connection; })
+		      .on('mouseover', tip.show)
+        	  .on('mouseout', tip.hide);
 
 		  // Legenda de valores (eixo x)
 		  svg.append("g")
