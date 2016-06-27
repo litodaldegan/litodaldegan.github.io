@@ -85,8 +85,8 @@ path {
 
 #mapa{
   float: left;
-  margin-top: 40px;
-  width: 40%;
+  margin-top: 5px;
+  width: 30%;
 } 
 #mapa .svg-container{
   padding-bottom: 68%;
@@ -104,4 +104,5 @@ path {
 #vis3{
   width: 45%;
   float: left;
+  margin-top: -200px;}
 }

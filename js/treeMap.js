@@ -40,7 +40,7 @@ $(function(){
 	 	});
 
 	var width = $("#vis3").parent().width() * 0.45,
-	    	height = 600,
+	    	height = 450,
 	    	color = d3.scale.linear().domain([0,190000]).range(["LightGray","darkblue"]),
 	    	div = d3.select("#vis3")
 	    		.append("div")
@@ -58,7 +58,7 @@ $(function(){
 	      	.attr("data-toggle", "tooltip")
 	      	.attr("data-placement", "top")
 	      	.attr("data-title",function(d) {
-	      		return d.size + " estudantes em " + d.name;
+	      		return d.size + " students in " + d.name;
 	      	})
 	      	.attr("data-state", function(d){
 	      		return d.name;
