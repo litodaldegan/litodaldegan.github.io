@@ -81,7 +81,7 @@
 		  // Legenda do gráfico (eixo y)
 		  svg.append("g")
 		      .attr("class", "y axis")
-		      .attr("transform", "translate(" + x(minimo-700) + ",0)")
+		      .attr("transform", "translate(" + x(minimo-710) + ",0)")
 		      .call(yAxis);
 		
 		  // Legenda
