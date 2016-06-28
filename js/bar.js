@@ -89,7 +89,7 @@ $(function(){
         .attr("y", function(d) { return y(d.totalSalary); })
         .attr("height", function(d) { return height - y(d.totalSalary); })
         .attr("fill",function(d){
-            return d3.interpolateOranges( (d.avgAge - minimo) / (maximo/2) );
+            return d3.interpolateBlues( (d.avgAge - (minimo /1.2)) / (maximo/2) );
             // return "rgb(" + (d3.round((d.totalSalary / minimo) * 32)) + "," + (d3.round((d.totalSalary / minimo) * 20)) + ",0)";
         })
         .on('mouseover', tip.show)
