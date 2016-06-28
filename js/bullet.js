@@ -62,7 +62,7 @@
 		      .data(data)
 		    .enter().append("rect")
 		      .attr("class", function(d) { return "bar bar--" + (d.connection == "indirect" ? "negative" : "positive"); })
-		      .attr("x", function(d) { return x(Math.min(0, d.amount))+80; })
+		      .attr("x", function(d) { return x(Math.min(0, d.amount)); })
 		      .attr("y", function(d) { return y(d.state); })
 		      .attr("width", function(d) { return Math.abs(x(d.amount) - x(0)); })
 		      .attr("height", y.rangeBand())
