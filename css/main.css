@@ -5,9 +5,9 @@ select {
 }
 
 h1 {
-  font: 18px sans-serif;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  font: 20px sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-anchor: middle;
   font-weight: bold;
   font-family: sans-serif;
@@ -29,16 +29,22 @@ h2 {
 h3 {
   font: 14px sans-serif;
   margin-top: 2px;
-  margin-bottom: -22px;
+  margin-bottom: -30px;
   text-anchor: middle;
   font-weight: bold;
-  font-family: sans-serif;
   text-align: center;
   text-align-last: center;
 }
 
+h4 {
+  font: 10px sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
 .filters {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .bar--positive {
@@ -122,8 +128,8 @@ path {
 
 #mapa{
   float: left;
-  margin-top: 0px;
-  width: 30%;
+  margin-top: 10px;
+  width: 40%;
 } 
 #mapa .svg-container{
   padding-bottom: 68%;
@@ -141,7 +147,7 @@ path {
 #vis3{
   width: 45%;
   float: left;
-  margin-top: -210px;
+  margin-top: -125px;
   /*margin-left: 30px;*/
   }
 }

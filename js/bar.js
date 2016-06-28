@@ -28,7 +28,10 @@ $(function(){
     .attr('class', 'd3-tip')
     .offset([-10, 0])
     .html(function(d) {
-        return "<strong>Amount:</strong> <span style='color:red'>" + d.totalSalary + "</span>";
+        return "<div style='text-align: center'><strong>" + d.state + 
+        "<br/><br/><strong>Average:</strong> <span style='color:red'>"
+        + d.totalSalary + "</span>" + "<br/><br/><strong>Average age: "
+        + "<span style='color:red'>" + d.avgAge;
     })
 
 
@@ -42,10 +45,13 @@ $(function(){
         y.domain([0, d3.max(data, function(d) { 
             if (d.connection == "direct")
                 return d.totalSalary; 
-        }) + 1000000]);
+        }) + 1000]);
         var minimo = d3.min(data, function(d) { 
             if (d.connection == "direct")
-                return d.totalSalary; });
+                return d.avgAge; });
+        var maximo = d3.max(data, function(d) { 
+            if (d.connection == "direct")
+                return d.avgAge; });
 
         var svg = 
         d3
@@ -71,7 +77,8 @@ $(function(){
         .attr("y", 6)
         .attr("dy", ".71em")
         .style("text-anchor", "end")
-        .text("Amount");
+        .style("font-weight", "bold")
+        .text("Average wage");
 
         svg.selectAll(".bar")
         .data(data)
@@ -82,7 +89,8 @@ $(function(){
         .attr("y", function(d) { return y(d.totalSalary); })
         .attr("height", function(d) { return height - y(d.totalSalary); })
         .attr("fill",function(d){
-            return "rgb(" + (d3.round((d.totalSalary / minimo) * 32)) + "," + (d3.round((d.totalSalary / minimo) * 20)) + ",0)";
+            return d3.interpolateOranges( (d.avgAge - minimo) / (maximo/2) );
+            // return "rgb(" + (d3.round((d.totalSalary / minimo) * 32)) + "," + (d3.round((d.totalSalary / minimo) * 20)) + ",0)";
         })
         .on('mouseover', tip.show)
         .on('mouseout', tip.hide);
@@ -94,17 +102,17 @@ $(function(){
         .style("font-size", "20px")
         .style("font-weight", "bold")
         .style("font-family", "sans-serif")
-        .text("Sum of average salary per state in construction for generation");
+        .text("Average salary and age per state in generation of electric energy (2009)");
         // Soma do salário médio por estado em obras para Geração
 
-        svg.append("text")
-        .attr("x", (width / 2) - 30)
-        .attr("y", 40)
-        .attr("text-anchor", "middle")
-        .style("font-size", "20px")
-        .style("font-weight", "bold")
-        .style("font-family", "sans-serif")
-        .text("and distribution of electric energy in Brazil");
+        // svg.append("text")
+        // .attr("x", (width / 2) - 30)
+        // .attr("y", 40)
+        // .attr("text-anchor", "middle")
+        // .style("font-size", "20px")
+        // .style("font-weight", "bold")
+        // .style("font-family", "sans-serif")
+        // .text("and distribution  in Brazil");
         // e Distribuição de energia elétrica no Brasil
 
         d3.select("#ordena").on("click", function(d){

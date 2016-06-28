@@ -2,34 +2,33 @@ $(function(){
 	var tree = {
 	name: "tree",
 	children: [
-		{name:	"AL",	size:	5638	},
-		{name:	"AC",	size:	1775	},
-		{name:	"AM",	size:	10878	},
-		{name:	"AP",	size:	992	},
-		{name:	"PA",	size:	6816	},
-		{name:	"RO",	size:	1033	},
-		{name:	"RR",	size:	348	},
-		{name:	"TO",	size:	2275	},
-		{name:	"AL",	size:	3028	},
-		{name:	"BA",	size:	24811	},
-		{name:	"CE",	size:	8385	},
-		{name:	"MA",	size:	5879	},
-		{name:	"PB",	size:	9301	},
-		{name:	"PE",	size:	12005	},
-		{name:	"PI",	size:	2931	},
-		{name:	"RN",	size:	3701	},
-		{name:	"SE",	size:	2736	},
-		{name:	"DF",	size:	11904	},
-		{name:	"GO",	size:	12855	},
-		{name:	"MS",	size:	5814	},
-		{name:	"MT",	size:	6744	},
-		{name:	"ES",	size:	12654	},
-		{name:	"MG",	size:	87769	},
-		{name:	"RJ",	size:	53284 },
-		{name:	"SP",	size:	172967	},
-		{name:	"PR",	size:	37027	},
-		{name:	"RS",	size:	39762	},
-		{name:	"SC",	size:	25635	}
+		{name:	"Acré",	size:	730},
+		{name:	"Amazonas",	size:	2907},
+		{name:	"Amapá",	size:	298},
+		{name:	"Pará",	size:	1738},
+		{name:	"Rondônia",	size:	220},
+		{name:	"Roraima",	size:	150},
+		{name:	"Tocantins",	size:	844},
+		{name:	"Alagoas",	size:	719},
+		{name:	"Bahia",	size:	6807},
+		{name:	"Ceará",	size:	2419},
+		{name:	"Maranhão",	size:	1628},
+		{name:	"Paraíba",	size:	2375},
+		{name:	"Pernambuco",	size:	3447},
+		{name:	"Piauí",	size:	1071},
+		{name:	"Rio Grande do Norte",	size:	999},
+		{name:	"Sergipe",	size:	756},
+		{name:	"Distrito Federal",	size:	3616},
+		{name:	"Goiás",	size:	3373},
+		{name:	"Mato Grosso do Sul",	size:	1950},
+		{name:	"Mato Grosso",	size:	2079},
+		{name:	"Espírito Santo",	size:	3143},
+		{name:	"Minas Gerais",	size:	22803},
+		{name:	"Rio de Janeiro",	size:	12686},
+		{name:	"São Paulo",	size:	42592},
+		{name:	"Paraná",	size:	9819},
+		{name:	"Rio Grande do Sul",	size:	9412},
+		{name:	"Santa Catarina",	size:	6475}
 	]};
 
 	var tip = d3.tip()
@@ -40,8 +39,8 @@ $(function(){
 	 	});
 
 	var width = $("#vis3").parent().width() * 0.45,
-	    	height = 450,
-	    	color = d3.scale.linear().domain([0,190000]).range(["LightGray","darkblue"]),
+	    	height = 370,
+	    	color = d3.scale.linear().domain([0,40000]).range(["LightGray","darkblue"]),
 	    	div = d3.select("#vis3")
 	    		.append("div")
 	       		.style("position", "relative");

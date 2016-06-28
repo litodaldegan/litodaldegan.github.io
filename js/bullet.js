@@ -44,9 +44,9 @@
 		    .offset([-10, 0])
 		    .html(function(d) {
 		    	if (d.connection == "direct")
-		        	return "<strong>Direct jobs:</strong> <span style='color:red'>" + d.amount + "</span>";
+		        	return "<div style='text-align: center'><strong>" + d.state + "<br/><br/><strong>Direct:</strong> <span style='color:red'>" + d.amount + "</span>";
 	    		else
-	    			return "<strong>Indirect jobs:</strong> <span style='color:red'>" + (-d.amount) + "</span>";
+	    			return "<div style='text-align: center'><strong>" + d.state + "<br/><br/><strong>Indirect:</strong> <span style='color:red'>" + (-d.amount) + "</span>";
 	    })
 
 		svg.call(tip);
@@ -62,7 +62,7 @@
 		      .data(data)
 		    .enter().append("rect")
 		      .attr("class", function(d) { return "bar bar--" + (d.connection == "indirect" ? "negative" : "positive"); })
-		      .attr("x", function(d) { return x(Math.min(0, d.amount)); })
+		      .attr("x", function(d) { return x(Math.min(0, d.amount))+80; })
 		      .attr("y", function(d) { return y(d.state); })
 		      .attr("width", function(d) { return Math.abs(x(d.amount) - x(0)); })
 		      .attr("height", y.rangeBand())
@@ -81,36 +81,36 @@
 		  // Legenda do gráfico (eixo y)
 		  svg.append("g")
 		      .attr("class", "y axis")
-		      .attr("transform", "translate(" + x(minimo-8000) + ",0)")
+		      .attr("transform", "translate(" + x(minimo-700) + ",0)")
 		      .call(yAxis);
 		
 		  // Legenda
 		  svg.append("g")
 		    .attr("class","legend")
 		    .attr("transform","translate(770,-30)")
-		    .style("font-size","14px")
+		    .style("font-size","16px")
 		    .call(d3.legend);
 
 
 		//titulo do gráfico
 		   svg.append("text")
 	        .attr("x", (width / 2) - 30)             
-	        .attr("y", 0 - (margin.top / 2))
+	        .attr("y", -10 - (margin.top / 2))
 	        .attr("text-anchor", "middle")  
-	        .style("font-size", "18px")
+	        .style("font-size", "20px")
 	        .style("font-weight", "bold")
 	        .style("font-family", "sans-serif")   
-	        .text("Comparative of indirect jobs vs direct jobs");
+	        .text("Comparative of indirect employees vs direct employees (2009)");
 	        /*Comparativo de empregos diretamente vs indiretamente*/
 
-	        svg.append("text")
-	        .attr("x", (width / 2) - 30)             
-	        .attr("y", 20 - (margin.top / 2))
-	        .attr("text-anchor", "middle")  
-	        .style("font-size", "18px") 
-	        .style("font-weight", "bold")
-	        .style("font-family", "sans-serif") 
-	        .text("for the electric energy sector in Brazil");
+	        // svg.append("text")
+	        // .attr("x", (width / 2) - 30)             
+	        // .attr("y", 20 - (margin.top / 2))
+	        // .attr("text-anchor", "middle")  
+	        // .style("font-size", "18px") 
+	        // .style("font-weight", "bold")
+	        // .style("font-family", "sans-serif") 
+	        // .text("for the electric energy sector in Brazil");
 	        /* ligados ao setor de energia elétrica no Brasil*/
 		});
 
