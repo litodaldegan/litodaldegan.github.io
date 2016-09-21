@@ -1,0 +1,55 @@
+state	initials	amount	connection	totalEmployees	totalSalary	avgAge
+Acre	AC	140	direct	6946152	5711.11	38.1
+Alagoas	AL	82	direct	29762910	4792.84	31.38
+Amazonas	AM	140	direct	34038822	2987.84	33.19
+Amapá	AP	156	direct	6627534	6840.55	39.77
+Bahia	BA	852	direct	131562282	5688.87	44.65
+Ceará	CE	359	direct	79938576	5440.54	43.04
+Distrito Federal	DF	171	direct	71823726	6659.52	35.68
+Espirito Santo	ES	40	direct	53921982	5238.67	25.98
+Goiás	GO	209	direct	80248428	5006.42	40.93
+Maranhão	MA	203	direct	36731598	7047.82	30.27
+Minas Gerais	MG	1237	direct	292028592	5215.96	34.85
+Mato Grosso do Sul	MS	24	direct	34900710	4025	36.63
+Mato Grosso	MT	293	direct	41550690	5824.73	41.37
+Pará	PA	453	direct	58618824	6633.22	41.44
+Paraíba	PB	67	direct	36012192	5625.48	33.95
+Pernambuco	PE	1393	direct	93733506	5203.44	38.35
+Piauí	PI	235	direct	23451540	4582.26	31.87
+Paraná	PR	2819	direct	174765930	5606.76	41.83
+Rio de Janeiro	RJ	1363	direct	262099296	6886.42	42.21
+Rio Grande do Norte	RN	77	direct	35636646	4949.59	34.91
+Rondônia	RO	429	direct	19146756	6924.61	41.64
+Roraima	RR	26	direct	4021008	9147.32	36.8
+Rio Grande do Sul	RS	657	direct	178970886	4795.83	38.87
+Santa Catarina	SC	246	direct	123386592	3430.06	39.07
+Sergipe	SE	109	direct	22924698	5483	33.8
+São Paulo	SP	1597	direct	803599584	5651.26	43.56
+Tocantins	TO	113	direct	14462466	5938.05	36.5
+Acre	AC	-248	indirect	6946152	5711.11	38.1
+Alagoas	AL	-154	indirect	29762910	4792.84	31.38
+Amazonas	AM	-1302	indirect	34038822	2987.84	33.19
+Amapá	AP	-314	indirect	6627534	6840.55	39.77
+Bahia	BA	-2113	indirect	131562282	5688.87	44.65
+Ceará	CE	-621	indirect	79938576	5440.54	43.04
+Distrito Federal	DF	-1727	indirect	71823726	6659.52	35.68
+Espirito Santo	ES	-142	indirect	53921982	5238.67	25.98
+Goiás	GO	-623	indirect	80248428	5006.42	40.93
+Maranhão	MA	-458	indirect	36731598	7047.82	30.27
+Minas Gerais	MG	-3339	indirect	292028592	5215.96	34.85
+Mato Grosso do Sul	MS	-100	indirect	34900710	4025	36.63
+Mato Grosso	MT	-799	indirect	41550690	5824.73	41.37
+Pará	PA	-1064	indirect	58618824	6633.22	41.44
+Paraíba	PB	-120	indirect	36012192	5625.48	33.95
+Pernambuco	PE	-3474	indirect	93733506	5203.44	38.35
+Piauí	PI	-375	indirect	23451540	4582.26	31.87
+Paraná	PR	-3839	indirect	174765930	5606.76	41.83
+Rio de Janeiro	RJ	-5731	indirect	262099296	6886.42	42.21
+Rio Grande do Norte	RN	-115	indirect	35636646	4949.59	34.91
+Rondônia	RO	-909	indirect	19146756	6924.61	41.64
+Roraima	RR	-49	indirect	4021008	9147.32	36.8
+Rio Grande do Sul	RS	-2154	indirect	178970886	4795.83	38.87
+Santa Catarina	SC	-1154	indirect	123386592	3430.06	39.07
+Sergipe	SE	-191	indirect	22924698	5483	33.8
+São Paulo	SP	-4508	indirect	803599584	5651.26	43.56
+Tocantins	TO	-259	indirect	14462466	5938.05	36.5

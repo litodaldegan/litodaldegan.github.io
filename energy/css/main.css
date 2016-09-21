@@ -1,0 +1,153 @@
+select {
+  width: 400px;
+  text-align: center;
+  text-align-last: center;
+}
+
+h1 {
+  font: 20px sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-anchor: middle;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-align: center;
+  text-align-last: center;
+}
+
+h2 {
+  font: 14px sans-serif;
+  margin-top: 0px;
+  margin-bottom: 3px;
+  text-anchor: middle;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-align: center;
+  text-align-last: center;
+}
+
+h3 {
+  font: 14px sans-serif;
+  margin-top: 2px;
+  margin-bottom: -30px;
+  text-anchor: middle;
+  font-weight: bold;
+  text-align: center;
+  text-align-last: center;
+}
+
+h4 {
+  font: 10px sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bar--positive {
+  fill: steelblue;
+}
+.bar--negative {
+  fill: darkorange;
+}
+.axis text {
+  font: 13px sans-serif;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.legend rect {
+  fill:white;
+  stroke:black;
+  opacity:0.8;
+}
+ 
+.node {
+    border: solid 1px white;
+    line-height: 0.95;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 6px;
+    background-image: -webkit-linear-gradient(top, hsla(0,0%,100%,.3), hsla(0,0%,100%,0));
+    background-image:    -moz-linear-gradient(top, hsla(0,0%,100%,.3), hsla(0,0%,100%,0));
+    background-image:     -ms-linear-gradient(top, hsla(0,0%,100%,.3), hsla(0,0%,100%,0));
+    background-image:      -o-linear-gradient(top, hsla(0,0%,100%,.3), hsla(0,0%,100%,0));
+    background-image:         linear-gradient(top, hsla(0,0%,100%,.3), hsla(0,0%,100%,0));
+}
+
+.node div {
+   padding: 6px 4%;
+}
+
+path {
+  stroke-linejoin: round;
+  stroke: #C0C0C0;
+}
+
+.states {
+  stroke: #fff;
+}
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+  font-size: .8em;
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+}
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+#vis1{
+  width: 60%;
+  float: left;
+}
+#vis1 .svg-container{
+  padding-bottom: 65%;
+}
+
+#mapa{
+  float: left;
+  margin-top: 10px;
+  width: 40%;
+} 
+#mapa .svg-container{
+  padding-bottom: 68%;
+}
+
+#vis2{
+  width: 55%;
+  float: left;
+}
+#vis2 .svg-container{
+  padding-bottom: 42%;
+}
+
+
+#vis3{
+  width: 45%;
+  float: left;
+  margin-top: -125px;
+  /*margin-left: 30px;*/
+  }
+}

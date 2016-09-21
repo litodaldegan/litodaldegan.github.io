@@ -1,0 +1,143 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.box {
+  font: 10px sans-serif;
+}
+
+.box line,
+.box rect,
+.box circle {
+  fill: #E2E2E2;
+  stroke: #000;
+  stroke-width: 1px;
+}
+
+.box .center {
+  stroke-dasharray: 3,3;
+}
+
+.box .dirigentes {
+  fill: #4169E1;
+  stroke-width: 0px;
+}
+
+.box .profissionaisDasCienciasEDasArtes {
+  fill: #FFD700;
+  stroke-width: 0px;
+}
+
+.box .tecnicosDeNivelMedio {
+  fill: #3CB371;
+  stroke-width: 0px;
+}
+
+.box .trabalhadoresDeServicosAdministrativos {
+  fill: #708090;
+  stroke-width: 0px;
+}
+
+.box .trabalhadoresEspecializadosDaProducao {
+  fill: #40E0D0;
+  stroke-width: 0px;
+}
+
+.box .trabalhadoresDeServicosEComercio {
+  fill: #DB7093;
+  stroke-width: 0px;
+}
+
+.axis {
+  font: 12px sans-serif;
+}
+ 
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+ 
+.x.axis path { 
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+div.rectTooltip {	
+    position: absolute;			
+    text-align: left;			
+    width: 250px;					
+    height: 100px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: #FFFAFA;	
+    border: 1px;
+    border-radius: 8px;			
+    pointer-events: none;
+    z-index: 1;			
+}
+
+div.pointTooltip {	
+    position: absolute;			
+    text-align: left;			
+    width: 560px;					
+    height: 58px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: #FFFAFA;	
+    border: 1px;		
+    border-radius: 8px;			
+    pointer-events: none;
+    z-index: 1;			
+}
+
+div.legenda {
+    position: absolute;				
+    text-align: left;			
+    width: 290px;					
+    height: 200px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: #EEE9E9;	
+    border: 1px;		
+    border-radius: 8px;			
+    pointer-events: none;
+    top: 280px;
+    left: 850px;
+    z-index: -1;			
+}
+
+html, body {
+    height: 100%;
+}
+
+/* Treemap */
+div.treemap {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: auto;
+  position: relative;
+  width: 960px;
+  height: 100%;
+}
+
+.node {
+  border: solid 1px white;
+  font: 10px sans-serif;
+  line-height: 12px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: 1px;
+}
+
+/*.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -142px;
+}*/
+
+.footer, .push {
+    height: 142px;
+}

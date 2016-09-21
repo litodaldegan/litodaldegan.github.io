@@ -1,0 +1,47 @@
+Uma análise dos empregados existentes no setor de geração de energia elétrica e de suas tendências. Traçando o perfil do mesmo dentre os estados do Brasil.
+
+Autores:
+	Alberto Passini
+	Eduardo Lelis
+	Ítalo Daldegan
+	Leonardo Apolinário
+
+Link para o acesso à visualização:
+	https://litodaldegan.github.io/
+
+Browser mais adequado para acesso:
+	Google Chrome (Versão 51)
+
+Sobre a visualização 1 (barra de dois lados):
+	Foi utilizado a ideia de gráfico de barras com dados para os dois sentidos do eixo X, sendo ambos os lados com valores positivos. A escolha deste tipo de visualização está no fato de que não achamos adequado a sobreposição de dados em gráfico de barras. Como foi visto em sala de aula, a sobreposição de dados dificulta muito a comparação dos valores. Desde modo, o dados totais de empregados do setor de energia elétrica estão representados do lado esquerdo do gráfico (a esquerda do eixo Y), enquanto que os dados de empregados diretamente ligados a produção de energia estão representados do lado direito. As cores (azul e laranja), foram escolhidas pelo motivo de serem complementares e não apresentarem nenhum problema de visualização para pessoa daltônicas. Os dados do gráfico estão ordenados de forma alfabética em relação ao nomes do estados brasileiros. 
+
+	Ordenação:
+		Como opção de ordenação para a visualização foram utilizados os seguinte parâmetros:
+			- Quantidade de empregos do setor energia elétrica (ascendente e descendente).
+			- Quantidade de empregos diretamente ligados ao setor de produção de energia elétrica (ascendente e descendente).
+			- Quantidade de empregos totais em cada estado (ascendente e descendente).
+			- Alfabética, ordenação padrão da visualização.
+
+Sobre a visualização 2 (mapa):
+	Para poder visualização melhor a distribuição dos empregados diretamente e indiretamente ligados à produção de energia foi utilizado um mapa. No mesmo é possível perceber bem como esses empregados estão distribuidos e é possível notar uma diferença existente a relação de direto/indireto dentre os estados.
+
+	Interação:
+		Como forma de interação do mapa foi implementado a opção para que o usuário alterne entre a representação de empregos diretos e indiretos no mapa.
+
+Sobre a visualização 3 (barras verticais):
+	Para poder representar a média salarial dos empregados dentre os estados, foi optado pelo gráfico de barras pela sua eficiência nesse tipo de visualização. Visando aumentar um pouco o nível de informações nessa visualização, as barras foram coloridas de acordo com a média de idade do estado.
+
+	Ordenação:
+		Nessa visualização é possível ordenar os dados de forma ascendente e descendente. Para poder ordenar os dados dessa visualização é necessário com o usuário utilize as mesmas opções de ordenção que também são usadas para a visualização 1. Para isso, deve-se selecionar os itens de ordenação de dados ligados a empregos diretamente relacionados.
+
+Sobre a visualização 4 (treemap):
+	Com o intuito de vislumbrar os estados com o maior número de estudantes ligados a produção de energia, foi criado um treemap onde se pode facilmente perceber a região que é a maior formadora desses profissionais. Traçando uma possível exportações de profssionais entre os estados, dado que alguns tem poucos estudante e muito profissionais.
+
+Dados utilizados
+	Para geração das visualizações e para análise feita nesse trabalho. Vale resaltar a atividade que foi o foco do trabalho, e bem como também é o nome encontrado na base de dados, é Geração de Energia Elétrica. Deste modo, na consideração dos empregados diretamente ligados e indiretamente, essa foi a atividade originadora dos dados. Também é importante deixar claro, que as ocupações que foram usadas para contabilizar os empregos diretamente ligados ao setor são:
+		- Engenheiros Eletricistas
+		- Operadores de Geração de Energia
+		- Operadores de Distribuição de Energia
+		- Trabalhadores de Instalações Elétricas
+		- Eletricistas de Manutenção Eletroeletrônica
+		- Técnicos Eletricistas
