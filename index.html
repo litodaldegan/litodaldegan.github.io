@@ -1,74 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=UTF8">
-    <title>Electric energy - Brazil</title>
-    <script src="js/jquery.min.js" charset="utf-8"></script>
-    <script src="js/d3.min.js" charset="utf-8"></script>
-    <script src="js/d3.legend.js" chartset="uft-8"> </script>
-    <script src="//d3js.org/queue.v1.min.js"></script>
-	<script src="//d3js.org/topojson.v1.min.js" charset="utf-8"></script>
-	<script src="//d3js.org/d3-color.v0.5.min.js"></script>
-	<script src="//d3js.org/d3-interpolate.v0.9.min.js"></script>
-	<script src="//d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
-	<script src="js/d3.tip.v0.6.3.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <meta charset="utf-8"/>
+    <title>Ítalo Daldegan</title>
+</head>
 
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
-	</head>
+<body>
+    <div>
+    <ul style="list-style-type:none;">
+        <li>
+            <a href="energy/energy.html" style="text-decoration:none;">Visualização de empregos no setor de energia elétrica</a>
+        </li>
+        <li>
+            <a href="dataviva/index.html" style="text-decoration:none;">Visualização DataViva</a>
+        </li>
+    </ul>
+    </div>
+</body>
 
-	<body>
-	<h1>Study of the job distribution in electric energy production sector in Brazil</h1>
-<div class="container">
-
-	<div class="filters">
-		<select name="sort" id="vis1-sorter">
-			<option value="none_alf"> Alphabetical order</option>
-			<option value="indirect_asc"> Indirect jobs - ascending order</option>
-			<option value="indirect_desc"> Indirect jobs - descending order</option>
-			<option value="direct_asc" id="ordena"> Direct jobs - ascending order</option>
-			<option value="direct_desc" > Direct jobs - descending order</option>
-			<option value="tempregados_asc"> Total employees in state - ascending order</option>
-			<option value="tempregados_dec"> Total employees in state - descending order</option>
-		</select> 
-		<select id="mapa-filter">
-			<option value="indirect"> Map coloring by indirect jobs</option>
-			<option value="direct"> Map coloring by direct jobs</option>
-		</select>
-	</div>
-	<div class="top-row clearfix">
-		<div id="vis1"></div>
-		<div id="mapa">
-			<h3>Number of employees in energy generation (2009)</h3>
-		</div>
-	</div>
-	<div class="bottom-row clearfix">
-		<div id="vis2">
-			<h4></h4>
-		</div>
-
-		<div id="vis3">
-			<h2>Number of future professionals in energy generation (2013)</h2>
-		</div>
-	</div>
-	<div>
-		<h4>
-			Considered occupations:
-			Electric engineers, Power Generation Operators, Energy Distribution Operators, 
-			Electrial and electronics Installer, Electricians of Electro-electronics Maintenance,
-			Electronics technicians.
-		</h4>
-	</div>
-	
-	    <!-- total da soma das médias de salário por estado -->
-</div>
-	<script src="js/bullet.js"></script>
-	<script src="js/map.js"></script>
-	<script src= "js/bar.js"></script>
-	<script src= "js/treeMap.js"></script>
-</body> 
 </html>
