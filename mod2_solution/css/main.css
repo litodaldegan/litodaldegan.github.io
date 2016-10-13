@@ -1,0 +1,81 @@
+* {
+	box-sizing: border-box;
+}
+
+@media (min-width: 992px) {
+	#section1 {width: 31.3%;}
+	#section2 {width: 31.3%;}
+	#section3 {width: 31.3%;}
+
+	.itemBox {height: 240px;}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	#section1 {width: 48%;}
+	#section2 {width: 48%;}
+	#section3 {width: 98%; height: 80px;}
+
+	.itemBox {height: 200px;}
+}
+
+@media (max-width: 767px) {
+	#section1 {width: 98%;}
+	#section2 {width: 98%;}
+	#section3 {width: 98%;}
+}
+
+body {
+	font-size: 100%;
+}
+
+h1 {
+	text-align: center;
+	margin: 4vw;
+	font-size: 2em;
+}
+
+.itemBox {
+	position: relative;
+
+	float: left;
+	margin: 1%;
+	padding: 1%;
+	
+	background-color: #80807C;
+
+	border: 1px solid black;
+
+	overflow: hidden;
+
+	font-size: 1.25em;
+}
+
+.itemCategory {
+	position: absolute;
+	top: -2px;
+	right: -2px;
+
+	width: 35%;
+	text-align: center;
+
+	border: 1px solid black;
+
+	font-family: sans-serif, Arial, Helvetica;
+	font-weight: bold;
+}
+
+.pinkItem {
+	background-color: #F0A983;
+}
+
+.blueItem {
+	background-color: #6767A8;
+}
+
+.greenItem {
+	background-color: #579E89;
+}
+
+.yellowItem {
+	background-color: #F0D583;
+}
